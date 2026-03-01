@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Resume Analysis Result</title>
+<style>
+body {
+    background: linear-gradient(135deg,#4e73df,#1cc88a);
+    font-family: Arial;
+    color: white;
+}
+.card {
+    background: white;
+    color: black;
+    width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+h2 {
+    text-align: center;
+}
+ul {
+    margin-left: 20px;
+}
+.section {
+    margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+
+<h2>Resume Analysis Result</h2>
+
+<h3>Score: {{ score }}/100</h3>
+
+<div class="section">
+<h3>Strengths</h3>
+<ul>
+{% for s in strengths %}
+<li>{{ s }}</li>
+{% endfor %}
+</ul>
+</div>
+
+<div class="section">
+<h3>Weaknesses</h3>
+<ul>
+{% for w in weaknesses %}
+<li>{{ w }}</li>
+{% endfor %}
+</ul>
+</div>
+
+<div class="section">
+<h3>Suggestions</h3>
+<ul>
+{% for sug in suggestions %}
+<li>{{ sug }}</li>
+{% endfor %}
+</ul>
+</div>
+
+<div class="section">
+<h3>Improvement Areas</h3>
+<ul>
+{% for imp in improvements %}
+<li>{{ imp }}</li>
+{% endfor %}
+</ul>
+</div>
+
+<div class="section">
+<h3>Skills Needed</h3>
+<ul>
+{% for skill in skills_needed %}
+<li>{{ skill }}</li>
+{% endfor %}
+</ul>
+</div>
+
+<div class="section">
+<h3>Current Available Job Roles Based on Your Skills</h3>
+<ul>
+{% for job in jobs %}
+<li>{{ job }}</li>
+{% endfor %}
+</ul>
+</div>
+
+<br>
+<a href="/upload">Analyze Another Resume</a> |
+<a href="/logout">Logout</a>
+
+</div>
+
+</body>
+</html>
